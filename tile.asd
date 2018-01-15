@@ -10,5 +10,8 @@
                #:alexandria)
   :serial t
   :components ((:file "package")
+               (:file "utils")
+               (:file "control-code")
+               (:file "buffer")
                (:file "tile")))
 
