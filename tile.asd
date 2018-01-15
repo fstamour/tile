@@ -15,3 +15,13 @@
                (:file "buffer")
                (:file "tile")))
 
+(asdf:defsystem #:tile-test
+  :depends-on (#:tile
+               #:cl-ppcre
+               #:prove)
+  :defsystem-depends-on (#:prove-asdf)
+  :components
+  ((:test-file "tests"))
+  :perform (test-op :after (op c)
+                    (funcall (intern #.(string :run) :prove) c)))
+
